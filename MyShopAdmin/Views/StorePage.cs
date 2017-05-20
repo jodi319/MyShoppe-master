@@ -192,7 +192,7 @@ namespace MyShopAdmin
 			{
 				var coder = new Xamarin.Forms.Maps.Geocoder();
 				var oldTitle = Title;
-				Title = "Please wait...";
+				Title = "Pplease wait...";
 				var locations =  (await coder.GetPositionsForAddressAsync(streetAddress.Text + " " + city.Text + ", " + state.Text + " " + zipCode.Text + " " + country.Text)).ToList();
 			    //var locations = (await coder.GetPositionsForAddressAsync(streetAddress.Text + " " + city.Text + ", " + country.Text)).ToList();
                 Title = oldTitle;
