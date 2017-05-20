@@ -1,0 +1,10 @@
+AppSaleShoppe DB:
+	username: jonathan
+	password: My@pps@l3
+	
+	
+Google Maps API details:
+API Key: AIzaSyBu_kQX9jtcEJ6HH9SyPp2Xy6Q2J7K8McU	
+
+SHA1: D6:F7:49:43:80:24:C2:48:E2:FA:52:A2:23:5E:C3:44:91:AC:9D:D1
+
