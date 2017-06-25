@@ -26,7 +26,12 @@ namespace MyShop
 		private const string LastSyncKey = "last_sync";
 		private static readonly DateTime LastSyncDefault = DateTime.Now.AddDays(-30);
 
-	
+	    // Initial favourites set
+        private const string InitFavSetKey = "Init_Fav_Set_key";
+        private static readonly bool InitFavSetKeyDefault = true;
+		// Initial regions set
+        private const string InitRegSetKey = "Init_Fav_Set_key";
+        private static readonly bool InitRegSetKeyDefault = true;
 
 		#endregion
 
@@ -60,6 +65,30 @@ namespace MyShop
 				AppSettings.AddOrUpdateValue<bool> (NeedSyncFeedbackKey, value);
 			}
 		}
+		
+		public static bool InitFavSet
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(InitFavSetKey, InitFavSetKeyDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(InitFavSetKey, value);
+            }
+        }
+		
+		public static bool InitRegSet
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(InitRegSetKey, InitRegSetKeyDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(InitRegSetKey, value);
+            }
+        }
 
 	}
 }

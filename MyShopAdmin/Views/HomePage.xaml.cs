@@ -10,7 +10,7 @@ namespace MyShopAdmin
 		public HomePage ()
 		{
 			InitializeComponent ();
-			Title = "Shoppe Admin";
+			Title = "AppSale Admin";
 			ButtonManage.Clicked += async (sender, e) => 
 			{
 				await Navigation.PushAsync(new StoresPage());

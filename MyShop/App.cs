@@ -1,5 +1,5 @@
 ﻿using System;
-
+using MyShop.Views;
 using Xamarin.Forms;
 
 namespace MyShop
@@ -9,7 +9,8 @@ namespace MyShop
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage(new HomePage())
+			//MainPage = new NavigationPage(new HomePage())
+            MainPage = new NavigationPage(new LoginPage())
 			{
 				BarTextColor = Color.White,
                 BarBackgroundColor = Color.FromHex("#2B84D3")

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyShop.Views.FavouritePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Save" Order="Primary" Icon="Microsoft.png" Text="Save" Priority="0" Activated="Save_Activated"/>
+        <ToolbarItem Name="SelectAll" Order="Secondary" Icon="Xamarin.png" Text="Select All" Priority="1" Activated="SelectAll_Activated"/>
+        <ToolbarItem Name="SelectNone" Order="Secondary" Icon="Xamarin.png" Text="Select None" Priority="1" Activated="SelectNone_Activated"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="FASHION AND BEAUTY" Grid.Row="0" Grid.Column="0" />
+        <Switch x:Name="FashionAndBeauty" ClassId="FashionAndBeauty" Toggled="Switches_OnToggled" IsToggled="True"  HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="SPORTS AND OUTDOOR" Grid.Row="1" Grid.Column="0" />
+        <Switch x:Name="SportsAndOutdoor" ClassId="SportsAndOutdoor" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="PETS" Grid.Row="2" Grid.Column="0" />
+        <Switch x:Name="Pets" ClassId="Pets" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="2" Grid.Column="1"/>
+        <Label Text="VEHICLES" Grid.Row="3" Grid.Column="0" />
+        <Switch x:Name="Vehicles" ClassId="Vehicles" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="3" Grid.Column="1"/>
+
+        <Label Text="HOME IMPROVEMENT" Grid.Row="4" Grid.Column="0" />
+        <Switch x:Name="HomeImprovement" ClassId="HomeImprovement" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="4" Grid.Column="1"/>
+        <Label Text="BABIES/CHILDREN" Grid.Row="5" Grid.Column="0" />
+        <Switch x:Name="BabiesChildren" ClassId="BabiesChildren" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="5" Grid.Column="1"/>
+        <Label Text="HOBBIES/INTERESTS" Grid.Row="6" Grid.Column="0" />
+        <Switch x:Name="HobbiesInterests" ClassId="HobbiesInterests" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="6" Grid.Column="1"/>
+        <Label Text="MOBILE PHONES AND ACCESSORIES" Grid.Row="7" Grid.Column="0" />
+        <Switch x:Name="MobilePhonesAndAccessories" ClassId="MobilePhonesAndAccessories" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="7" Grid.Column="1"/>
+
+        <Label Text="HOME APPLIANCES" Grid.Row="8" Grid.Column="0" />
+        <Switch x:Name="HomeAppliances" ClassId="HomeAppliances" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="8" Grid.Column="1"/>
+        <Label Text="GAMING" Grid.Row="9" Grid.Column="0" />
+        <Switch x:Name="Gaming" ClassId="Gaming" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="9" Grid.Column="1"/>
+        <Label Text="BOOKS" Grid.Row="10" Grid.Column="0" />
+        <Switch x:Name="Books" ClassId="Books" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="10" Grid.Column="1"/>
+        <Label Text="MUSIC" Grid.Row="11" Grid.Column="0" />
+        <Switch x:Name="Music" ClassId="Music" Toggled="Switches_OnToggled" HorizontalOptions="EndAndExpand" Grid.Row="11" Grid.Column="1"/>
+        <Label x:Name="LblStatus" ClassId="LblStatus" Text="" Grid.Row="12" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>

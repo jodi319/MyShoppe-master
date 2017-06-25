@@ -12,7 +12,8 @@ namespace MyShop
 		{
 			InitializeComponent ();
 			BindingContext = new HomeViewModel (this);
-			ButtonFindStore.Clicked += async (sender, e) => 
+
+            ButtonFindStore.Clicked += async (sender, e) => 
 			{
                 if (Device.Idiom == TargetIdiom.Tablet || Device.Idiom == TargetIdiom.Desktop)
                     await Navigation.PushAsync(new StoresTabletPage());

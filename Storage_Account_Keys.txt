@@ -1,0 +1,5 @@
+key1: fuXkB/9h9LQmNLx8OTpQS+YMWALLRg9xUJeAh64OkTJh0cMZrR3FQPPxI5rsk+K7nvreC6kKk384qDKpbTztbw==
+CONNECTION STRING: DefaultEndpointsProtocol=https;AccountName=appsalesa;AccountKey=fuXkB/9h9LQmNLx8OTpQS+YMWALLRg9xUJeAh64OkTJh0cMZrR3FQPPxI5rsk+K7nvreC6kKk384qDKpbTztbw==;EndpointSuffix=core.windows.net
+
+key2: XLnZPeT1qPpUkwInXBZc96MkZJ9RVqWK/e+BprXxx13089xKgXiEmIXWsLrqfSW2ACmp88D8WKzgb+TMT5SxEg==
+CONNECTION STRING: DefaultEndpointsProtocol=https;AccountName=appsalesa;AccountKey=XLnZPeT1qPpUkwInXBZc96MkZJ9RVqWK/e+BprXxx13089xKgXiEmIXWsLrqfSW2ACmp88D8WKzgb+TMT5SxEg==;EndpointSuffix=core.windows.net

@@ -17,7 +17,7 @@
 			</Grid.ColumnDefinitions>
       <Image
         Grid.ColumnSpan="2"
-				Source="hero.jpg"
+				Source="asale.jpg"
         Aspect="AspectFill"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions ="FillAndExpand"/>
@@ -27,7 +27,7 @@
 				BackgroundColor="#3498DB"
 				BorderRadius="0"
 				TextColor="White" 
-				Text="Manage Locations"/>
+				Text="Manage Sales/Shops"/>
 			<Button 
 				x:Name="ButtonFeedback"
 				Grid.Row="1"

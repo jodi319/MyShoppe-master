@@ -15,7 +15,7 @@ namespace MyShop
         public bool ForceSync { get; set; }
         public StoresViewModel(Page page) : base(page)
         {
-            Title = "Locations";
+            Title = "Sales";
             dataStore = DependencyService.Get<IDataStore>();
             Stores = new ObservableRangeCollection<Store>();
             StoresGrouped = new ObservableRangeCollection<Grouping<string, Store>>();

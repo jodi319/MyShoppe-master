@@ -19,17 +19,17 @@
       <Image
                 x:Name="HeroImage"
                 Grid.ColumnSpan="2"
-				Source="hero.jpg"
+				Source="bsale.jpg"
                 Aspect="AspectFill"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions ="FillAndExpand"/>
 			<Button 
 				x:Name="ButtonFindStore"
 				Grid.Row="1"
-				BackgroundColor="#0"
+				BackgroundColor="#81C987"
 				BorderRadius="0"
 				TextColor="White" 
-				Text="Locations"/>
+				Text="Shops"/>
 			<Button 
 				x:Name="ButtonLeaveFeedback"
 				Grid.Row="1"
