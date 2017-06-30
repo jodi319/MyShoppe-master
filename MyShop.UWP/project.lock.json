@@ -18205,16 +18205,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\JW\\Documents\\Visual Studio 2015\\Projects\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\MyShop.UWP.csproj",
+      "projectUniqueName": "C:\\Xamarin\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\MyShop.UWP.csproj",
       "projectName": "MyShop.UWP",
-      "projectPath": "C:\\Users\\JW\\Documents\\Visual Studio 2015\\Projects\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\MyShop.UWP.csproj",
-      "projectJsonPath": "C:\\Users\\JW\\Documents\\Visual Studio 2015\\Projects\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\project.json",
+      "projectPath": "C:\\Xamarin\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\MyShop.UWP.csproj",
+      "projectJsonPath": "C:\\Xamarin\\MyShoppe-master\\MyShoppe-master\\MyShop.UWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\JW\\Documents\\Visual Studio 2015\\Projects\\MyShoppe-master\\MyShoppe-master\\MyShop\\MyShop.csproj": {
-              "projectPath": "C:\\Users\\JW\\Documents\\Visual Studio 2015\\Projects\\MyShoppe-master\\MyShoppe-master\\MyShop\\MyShop.csproj"
+            "C:\\Xamarin\\MyShoppe-master\\MyShoppe-master\\MyShop\\MyShop.csproj": {
+              "projectPath": "C:\\Xamarin\\MyShoppe-master\\MyShoppe-master\\MyShop\\MyShop.csproj"
             }
           }
         }

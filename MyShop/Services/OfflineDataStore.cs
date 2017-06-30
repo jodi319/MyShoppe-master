@@ -24,6 +24,20 @@ namespace MyShop.Services
             return await Task.Run(() => JsonConvert.DeserializeObject<List<Store>>(json));
         }
 
+        //public async Task<IEnumerable<Favourite>> GetFavouritesAsync()
+        //{
+        //    var rootFolder = FileSystem.Current.LocalStorage;
+        //    var json = ResourceLoader.GetEmbeddedResourceString(Assembly.Load(new AssemblyName("MyShop")), "favourites.json");
+        //    return await Task.Run(() => JsonConvert.DeserializeObject<List<Favourite>>(json));
+        //}
+
+        //public async Task<IEnumerable<Region>> GetRegionsAsync()
+        //{
+        //    var rootFolder = FileSystem.Current.LocalStorage;
+        //    var json = ResourceLoader.GetEmbeddedResourceString(Assembly.Load(new AssemblyName("MyShop")), "regions.json");
+        //    return await Task.Run(() => JsonConvert.DeserializeObject<List<Region>>(json));
+        //}
+
         public async Task<Feedback> AddFeedbackAsync(Feedback feedback)
         {
             var emailTask = MessagingPlugin.EmailMessenger;
@@ -34,6 +48,28 @@ namespace MyShop.Services
 
             return await Task.Run(() => { return feedback; });
         }
+
+        public async Task<Favourites> AddFavouriteAsync(Favourites favourites)
+        {
+            var emailTask = MessagingPlugin.EmailMessenger;
+            if (emailTask.CanSendEmail)
+            {
+                emailTask.SendEmail("jodi319@gmail.com", "My Shop Favourite", favourites.ToString());
+            }
+
+            return await Task.Run(() => { return favourites; });
+        }
+
+        //public async Task<Region> AddRegionAsync(Region region)
+        //{
+        //    var emailTask = MessagingPlugin.EmailMessenger;
+        //    if (emailTask.CanSendEmail)
+        //    {
+        //        emailTask.SendEmail("jodi319@gmail.com", "My Shop Region", region.ToString());
+        //    }
+
+        //    return await Task.Run(() => { return region; });
+        //}
 
         public async Task<Store> AddStoreAsync(Store store)
         {
@@ -56,12 +92,32 @@ namespace MyShop.Services
             return await Task.Run(() => { return true; });
         }
 
+        //public async Task<bool> RemoveFavouriteAsync(Favourite favourite)
+        //{
+        //    return await Task.Run(() => { return true; });
+        //}
+
+        //public async Task<bool> RemoveRegionAsync(Region region)
+        //{
+        //    return await Task.Run(() => { return true; });
+        //}
+
         public async Task<bool> RemoveStoreAsync(Store store)
         {
             return await Task.Run(() => { return true; });
         }
 
         public Task SyncFeedbacksAsync()
+        {
+            return Task.Run(() => { });
+        }
+
+        public Task SyncFavouritesAsync()
+        {
+            return Task.Run(() => { });
+        }
+
+        public Task SyncRegionsAsync()
         {
             return Task.Run(() => { });
         }
@@ -75,5 +131,15 @@ namespace MyShop.Services
         {
             return await Task.Run(() => { return store; });
         }
+
+        //public async Task<Region> UpdateRegionAsync(Region region)
+        //{
+        //    return await Task.Run(() => { return region; });
+        //}
+
+        //public async Task<Favourite> UpdateFavouriteAsync(Favourite favourite)
+        //{
+        //    return await Task.Run(() => { return favourite; });
+        //}
     }
 }

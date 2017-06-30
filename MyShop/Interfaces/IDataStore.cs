@@ -16,6 +16,18 @@ namespace MyShop
 		Task<bool> RemoveFeedbackAsync(Feedback feedback);
 		Task SyncStoresAsync();
 		Task SyncFeedbacksAsync();
-	}
+
+
+        // Task<IEnumerable<Favourite>> GetFavouritesAsync();
+        Task<Favourites> AddFavouriteAsync(Favourites favourites);
+        // Task<bool> RemoveFavouriteAsync(Favourite favourite);
+        // Task<Favourite> UpdateFavouriteAsync(Favourite favourite);
+        Task SyncFavouritesAsync();
+
+        // Task<IEnumerable<Region>> GetRegionsAsync();
+        // Task<Region> AddRegionAsync(Region region);
+        // Task<bool> RemoveRegionAsync(Region region);
+        // Task<Region> UpdateRegionAsync(Region region);
+    }
 }
 

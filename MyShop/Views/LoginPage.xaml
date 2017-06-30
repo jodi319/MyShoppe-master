@@ -32,7 +32,8 @@
                         <Entry Text="Password" Placeholder="Password" />
                         <Button x:Name="LoginButton" Text="Login" Clicked="OnLoginButtonClicked" />
                         <Button Text="Google"  Clicked="OnLoginButtonClicked" Image="GOOGLE.png" HeightRequest="50"/>
-                        <Button Text="FaceBook"  Clicked="OnLoginButtonClicked" Image="FACEBOOK.png" HeightRequest="50"/>
+                        <Button Text="FaceBook"  Clicked="OnFacebookLoginButtonClicked" Image="FACEBOOK.png" HeightRequest="50"/>
+                        <Label x:Name="messageLabel" />
                     </StackLayout>
                 </Frame>
             </StackLayout>

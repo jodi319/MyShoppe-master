@@ -6,18 +6,25 @@ namespace MyShop
 {
 	public class App : Application
 	{
-		public App ()
-		{
-			// The root page of your application
-			//MainPage = new NavigationPage(new HomePage())
-            MainPage = new NavigationPage(new LoginPage())
-			{
-				BarTextColor = Color.White,
-                BarBackgroundColor = Color.FromHex("#2B84D3")
-			};
-		}
+        //public static IAuthenticate Authenticator { get; private set; }
 
-		protected override void OnStart ()
+        public App ()
+		{
+            // The root page of your application
+            //MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new LoginPage())
+            {
+                BarTextColor = Color.White,
+                BarBackgroundColor = Color.FromHex("#2B84D3")
+            };
+        }
+
+        //public static void Init(IAuthenticate authenticator)
+        //{
+        //    Authenticator = authenticator;
+        //}
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

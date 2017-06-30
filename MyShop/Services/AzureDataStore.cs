@@ -22,7 +22,10 @@ namespace MyShop
 
 		IMobileServiceSyncTable<Store> storeTable;
 		IMobileServiceSyncTable<Feedback> feedbackTable;
-		bool initialized = false;
+        //IMobileServiceSyncTable<Region> regionTable;
+        IMobileServiceSyncTable<Favourites> favouriteTable;
+
+        bool initialized = false;
 
 		public AzureDataStore()
 		{
@@ -39,14 +42,113 @@ namespace MyShop
 			var store = new MobileServiceSQLiteStore(path);
 			store.DefineTable<Store>();
 			store.DefineTable<Feedback> ();
-			await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+            //store.DefineTable<Region>();
+            store.DefineTable<Favourites>();
+            await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
 
 			storeTable = MobileService.GetSyncTable<Store>();
 			feedbackTable = MobileService.GetSyncTable<Feedback> ();
-		}
+            //regionTable = MobileService.GetSyncTable<Region>();
+            favouriteTable = MobileService.GetSyncTable<Favourites>();
+        }
+
+        public void Test()
+        {
+
+        }
+
+        //public async Task<Region> AddRegionAsync(Region region)
+        //{
+        //    if (!initialized)
+        //        await Init();
 
 
-		public async Task<Feedback> AddFeedbackAsync(Feedback feedback)
+        //    await regionTable.InsertAsync(region);
+        //    await SyncRegionsAsync();
+        //    return region;
+        //}
+        //public async Task<bool> RemoveRegionAsync(Region region)
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await regionTable.DeleteAsync(region);
+        //    await SyncRegionsAsync();
+        //    await MobileService.SyncContext.PushAsync();
+        //    return true;
+        //}
+        //public async Task<Region> UpdateRegionAsync(Region region)
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await regionTable.UpdateAsync(region);
+        //    await SyncRegionsAsync();
+        //    await MobileService.SyncContext.PushAsync();
+        //    return region;
+        //}
+
+        //public async Task<IEnumerable<Region>> GetRegionsAsync()
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await SyncRegionsAsync();
+        //    return await regionTable.ToEnumerableAsync();
+        //}
+
+
+
+
+        public async Task<Favourites> AddFavouriteAsync(Favourites favourites)
+        {
+            if (!initialized)
+                await Init();
+
+
+            await favouriteTable.InsertAsync(favourites);
+            await SyncFavouritesAsync();
+            await MobileService.SyncContext.PushAsync();
+            return favourites;
+        }
+
+        //public async Task<bool> RemoveFavouriteAsync(Favourite favourite)
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await favouriteTable.DeleteAsync(favourite);
+        //    await SyncFavouritesAsync();
+        //    await MobileService.SyncContext.PushAsync();
+        //    return true;
+        //}
+        //public async Task<Favourite> UpdateFavouriteAsync(Favourite favourite)
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await favouriteTable.UpdateAsync(favourite);
+        //    await SyncFavouritesAsync();
+        //    await MobileService.SyncContext.PushAsync();
+        //    return favourite;
+        //}
+
+        //public async Task<IEnumerable<Favourite>> GetFavouritesAsync()
+        //{
+        //    if (!initialized)
+        //        await Init();
+
+        //    await SyncFavouritesAsync();
+        //    return await favouriteTable.ToEnumerableAsync();
+        //}
+
+
+
+
+
+
+
+        public async Task<Feedback> AddFeedbackAsync(Feedback feedback)
 		{
 			if (!initialized)
 				await Init();
@@ -135,7 +237,25 @@ namespace MyShop
 			}
 		}
 
-		public async Task SyncFeedbacksAsync ()
+        public async Task SyncRegionsAsync()
+        {
+            try
+            {
+                Settings.NeedSyncRegion = true;
+                if (!CrossConnectivity.Current.IsConnected)
+                    return;
+
+
+                await MobileService.SyncContext.PushAsync();
+                Settings.NeedSyncRegion = false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Sync Failed:" + ex.Message);
+            }
+        }
+
+        public async Task SyncFeedbacksAsync ()
 		{
 			try
 			{
@@ -153,7 +273,25 @@ namespace MyShop
 			}
 		}
 
-		static readonly AzureDataStore instance = new AzureDataStore();
+        public async Task SyncFavouritesAsync()
+        {
+            try
+            {
+                Settings.NeedSyncRegion = true;
+                if (!CrossConnectivity.Current.IsConnected)
+                    return;
+
+
+                await MobileService.SyncContext.PushAsync();
+                Settings.NeedSyncRegion = false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Sync Failed:" + ex.Message);
+            }
+        }
+
+        static readonly AzureDataStore instance = new AzureDataStore();
 		/// <summary>
 		/// Gets the instance of the Azure Web Service
 		/// </summary>

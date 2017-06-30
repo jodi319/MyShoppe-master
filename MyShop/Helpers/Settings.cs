@@ -18,9 +18,18 @@ namespace MyShop
 			}
 		}
 
-		#region Setting Constants
+        #region Setting Constants
 
-		private const string NeedSyncFeedbackKey = "need_sync_feedback";
+        const string UserIdKey = "userid";
+        static readonly string UserIdDefault = string.Empty;
+
+        const string AuthTokenKey = "authtoken";
+        static readonly string AuthTokenDefault = string.Empty;
+
+        private const string NeedSyncRegionKey = "need_sync_region";
+        private static readonly bool NeedSyncRegionDefault = false;
+
+        private const string NeedSyncFeedbackKey = "need_sync_feedback";
 		private static readonly bool NeedSyncFeedbackDefault = false;
 
 		private const string LastSyncKey = "last_sync";
@@ -57,7 +66,19 @@ namespace MyShop
 			}
 		}
 
-		public static bool NeedSyncFeedback {
+        public static bool NeedSyncRegion
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<bool>(NeedSyncRegionKey, NeedSyncRegionDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<bool>(NeedSyncRegionKey, value);
+            }
+        }
+
+        public static bool NeedSyncFeedback {
 			get {
 				return AppSettings.GetValueOrDefault<bool> (NeedSyncFeedbackKey, NeedSyncFeedbackDefault);
 			}
@@ -90,5 +111,19 @@ namespace MyShop
             }
         }
 
-	}
+        public static string AuthToken
+        {
+            get { return AppSettings.GetValueOrDefault<string>(AuthTokenKey, AuthTokenDefault); }
+            set { AppSettings.AddOrUpdateValue<string>(AuthTokenKey, value); }
+        }
+
+        public static string UserId
+        {
+            get { return AppSettings.GetValueOrDefault<string>(UserIdKey, UserIdDefault); }
+            set { AppSettings.AddOrUpdateValue<string>(UserIdKey, value); }
+        }
+
+        public static bool IsLoggedIn => !string.IsNullOrWhiteSpace(UserId);
+
+    }
 }
